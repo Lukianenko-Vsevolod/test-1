@@ -16,7 +16,11 @@ jobs:
         python-version: '3.10'
     
     - name: Install dependencies
-      run: pip install -r practice/2_cicd/requirements.txt
+      run: |
+        cd practice/2_cicd
+        pip install -r requirements.txt
     
     - name: Run tests
-      run: python -m pytest practice/2_cicd/test_main.py -v
+      run: |
+        cd practice/2_cicd
+        python -m pytest test_main.py -v
